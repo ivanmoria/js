@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+                <meta name="description" content="Ivan Moriá Borges é um jovem pesquisador, atualmente desenvolvendo um projeto que abarca Musicoterapia, Neurociências e Tecnologia">
+                <meta name="apple-mobile-web-app-status-bar-style" content="#2d2b2b">
+                <meta name="theme-color" content="#2d2b2b">
+                <meta name="apple-mobile-web-app-capable" content="yes">
+            <meta name="apple-mobile-web-app-status-bar-style" content="#2d2b2b">
+            <meta name="theme-color" content="#2d2b2b">
+            <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+                <meta name="description" content="Ivan Moriá">
+                <title>Ivan Moriá Borges Rodrigues</title>
+                <link rel="stylesheet" href="style.css">
+                <link rel="stylesheet" href="styleindex.css">
+                <script src="script.js" defer></script> 
+                <script src="scriptindex.js" defer></script> 
+                <link href="https://fonts.googleapis.com/css2?family=JS+Brains+Telex&display=swap" rel="stylesheet">
+                <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap">
+                <link rel="icon" href="https://img.icons8.com/?size=100&id=30660&format=png&color=000000" type="image/x-icon">
+                <link rel="apple-touch-icon" href="https://img.icons8.com/?size=100&id=30660&format=png&color=000000">
+            
+                <script src="https://unpkg.com/wavesurfer.js"></script>
+            
+            </head>
+            <body>
+
+            <script>// Impede o scroll
+                document.body.style.overflow = 'hidden';
+                
+                // Remove qualquer evento `beforeunload` registrado previamente
+                window.onbeforeunload = null;
+                
+                // Bloqueia o menu de contexto
+                document.addEventListener("contextmenu", function(e) {
+                    e.preventDefault();
+                });
+                
+                // Bloqueia a ação de copiar
+                document.addEventListener("copy", function(e) {
+                    e.preventDefault();
+                });
+                
+                // Impede a seleção de texto
+                document.addEventListener("selectstart", function(e) {
+                    e.preventDefault();
+                });
+                
+                // Impede o uso de teclas de rolagem (como setas ou PageDown)
+                document.addEventListener("keydown", function(e) {
+                    const forbiddenKeys = ["ArrowUp", "ArrowDown", "PageUp", "PageDown", "Home", "End", " "];
+                    if (forbiddenKeys.includes(e.key)) {
+                        e.preventDefault();
+                    }
+                });
+                
+                // Impede rolagem via mouse
+                document.addEventListener("wheel", function(e) {
+                    e.preventDefault();
+                }, { passive: false });
+                
+                // Impede a manipulação direta do scrollbar
+                document.documentElement.style.overflow = 'hidden'; // Para todo o documento
+                document.documentElement.style.userSelect = 'none'; // Impede seleção de texto via CSS
+                document.body.style.userSelect = 'none'; // Complementa para o body
+                
+                
+                
+                
+                                    // Função para impedir o recarregamento por pull-to-refresh
+                      function preventPullToRefresh(element) {
+                        let prevent = false;
+                
+                        element.addEventListener('touchstart', function(e) {
+                            if (e.touches.length !== 1) return;
+                            const scrollY = window.pageYOffset || document.body.scrollTop || document.documentElement.scrollTop;
+                            prevent = (scrollY === 0);
+                        });
+                
+                        element.addEventListener('touchmove', function(e) {
+                            if (prevent) {
+                                prevent = false;
+                                e.preventDefault();
+                            }
+                        });
+                    }
+                
+                    document.addEventListener('DOMContentLoaded', function() {
+                        preventPullToRefresh(document);
+                    });
+                </script>
+
+<body>
+  <div id="canvas-container"></div>
+ 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+<body>
+
+
+
+
+</body>
+</html>
